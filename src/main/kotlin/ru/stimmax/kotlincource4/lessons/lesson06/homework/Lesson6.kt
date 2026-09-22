@@ -26,6 +26,21 @@ fun main() {
 
     convertTemperature(0.0, "f")
     convertTemperature(74.0, "f")
+
+    gerFormat("afwaf.dawdawd")
+    gerFormat("afwaf.TXT")
+    gerFormat("afwaf.txt")
+    gerFormat("afwaf.jpg")
+    gerFormat("afwaf.JPG")
+    gerFormat("afwaf.png")
+    gerFormat("afwaf.png")
+    gerFormat("afwaf.jpg")
+    gerFormat("afwaf.JPG")
+    gerFormat("afwaf.xlsx")
+    gerFormat("afwaf.XLSX")
+
+
+
 }
 
 /*
@@ -106,6 +121,23 @@ fun calculateBonus(purchaseAmount: Double) {
 
 
 /*
+Задание 5: "Определение типа документа"
+
+В системе хранения документов каждый файл имеет расширение.
+Напишите функцию, которая на основе расширения файла печатает в консоль его тип:
+"Текстовый документ", "Изображение", "Таблица" или "Неизвестный тип".
+ */
+fun gerFormat(str: String) {
+    val res = str.substringAfter('.')
+    when (res.lowercase()) {
+        "txt" -> println("Текстовый документ")
+        "jpg", "png" -> println("Изображение")
+        "xlsx" -> println("Таблица")
+        else -> println("Неизвестный тип")
+    }
+}
+
+/*
 Задание 6: "Конвертация температуры"
 
 Создайте функцию, которая конвертирует температуру из градусов Цельсия в Фаренгейты и наоборот в зависимости от указанной единицы измерения (C/F).
@@ -157,14 +189,14 @@ fun recommendClothing(temperature: Double) {
 
  */
 
-fun getPegi(age:Int){
-    if(age !in 0..150){
+fun getPegi(age: Int) {
+    if (age !in 0..150) {
         println("Допустимый возраст от 0 до 150 включительно")
-    }else{
-        val movie: String = when{
+    } else {
+        val movie: String = when {
             age in 0..9 -> "Детские"
             age in 10..18 -> "Подростковые"
-            else  -> "18+"
+            else -> "18+"
 
         }
         println(movie)
